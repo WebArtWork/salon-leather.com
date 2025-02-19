@@ -1,17 +1,17 @@
 // Global styles
-@import "scss/utils/normalize";
-@import "scss/utils/fonts";
-@import "scss/utils/vars";
-@import "scss/utils/media";
-@import "scss/base";
+@use "scss/utils/vars";
+@use "scss/utils/normalize";
+@use "scss/utils/fonts";
+@use "scss/utils/media";
+@use "scss/base";
 
 // pages
-@import "scss/pages/template";
-@import "scss/pages/product";
-@import "scss/pages/category";
-@import "scss/pages/leather";
-@import "scss/utils/header";
-@import "scss/utils/footer";
-@import "scss/pages/cart";
-@import "scss/pages/order";
-@import "scss/pages/car";
+@use "scss/pages/template";
+@use "scss/pages/product";
+@use "scss/pages/category";
+@use "scss/pages/leather";
+@use "scss/utils/header";
+@use "scss/utils/footer";
+@use "scss/pages/cart";
+@use "scss/pages/order";
+@use "scss/pages/car";

@@ -19,9 +19,9 @@
 вул. Героїв Небесної Сотні, 36" />
 
 	<!-- ==== Social Media ==== -->
-	<meta itemprop="name" content="Салон шкіри &#39;Jack Hocker&#39;">
-	<meta name="twitter:title" content="Салон шкіри &#39;Jack Hocker&#39;">
-	<meta property="og:title" content="Салон шкіри &#39;Jack Hocker&#39;" />
+	<meta itemprop="name" content="Welcome to waw Template">
+	<meta name="twitter:title" content="Welcome to waw Template">
+	<meta property="og:title" content="Welcome to waw Template" />
 	<meta itemprop="description" content="description" />
 	<meta name="twitter:description" content="description">
 	<meta property="og:description" content="description" />
@@ -135,268 +135,205 @@
 			</div>
 		</header>
 
-		<!-- ==== MAIN CONTENT starts here ==== -->
-<main>
-	<!-- ==== HERO section ==== -->
-	<section class="hero">
-		<!-- ==== HERO-SLIDER section ==== -->
-		<div class="slider">
-			<input class="slider-nav" id="slide1" type="radio" name="slider" checked />
-			<div class="slider-item">
-				<label for="slide5" class="slider-arrow slider-arrow-prev"></label>
-				<label for="slide2" class="slider-arrow slider-arrow-next"></label>
-				<div class="slider-slide angle-bed"></div>
-			</div>
+		<main class="product-page">
+   <section class="product">
+      <div class="background"></div>
+      <div class="container">
 
-			<input class="slider-nav" id="slide2" type="radio" name="slider" />
-			<div class="slider-item">
-				<label for="slide1" class="slider-arrow slider-arrow-prev"></label>
-				<label for="slide3" class="slider-arrow slider-arrow-next"></label>
-				<div class="slider-slide sofa"></div>
-			</div>
+         <!-- Product title -->
+         <div class="product__title">
+            Product Name
+            <!-- Rating -->
+            <div class="rating" data-rating="">
+               <div class="rating_body">
+                  <div class="rating_active"></div>
+               </div>
+            </div>
+         </div>
 
-			<input class="slider-nav" id="slide3" type="radio" name="slider" />
-			<div class="slider-item">
-				<label for="slide2" class="slider-arrow slider-arrow-prev"></label>
-				<label for="slide4" class="slider-arrow slider-arrow-next"></label>
-				<div class="slider-slide angle-sofa"></div>
-			</div>
+         <!-- <div class="product__body">
+                      <div class="img-main">
+                         <img src="./template/img/bed1.jpg" alt="Sofa">
+                      </div>
+               </div> -->
 
-			<input class="slider-nav" id="slide4" type="radio" name="slider" />
-			<div class="slider-item">
-				<label for="slide3" class="slider-arrow slider-arrow-prev"></label>
-				<label for="slide5" class="slider-arrow slider-arrow-next"></label>
-				<div class="slider-slide bed"></div>
-			</div>
+         <!-- ==== SLIDER ==== -->
+         <!-- Slider main container -->
+         <div class="swiper" id="product-main-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+               <!-- Slides -->
+               
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
-			<input class="slider-nav" id="slide5" type="radio" name="slider" />
-			<div class="slider-item">
-				<label for="slide4" class="slider-arrow slider-arrow-prev"></label>
-				<label for="slide1" class="slider-arrow slider-arrow-next"></label>
-				<div class="slider-slide chair"></div>
-			</div>
-		</div>
-		<!-- ==== HERO-SLIDER section end ==== -->
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
 
-		<div class="hero__content">
-			<h1 class="hero__title">
-				М'які меблі
-				<span>"Jack Hoker"</span>
-			</h1>
-			<a class="hero__btn" href="/catalog">
-				Каталог
-				<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M12.891 0.960938L11.835 2.04019L15.0472 5.25019H0V6.75019H15.0472L11.8358 9.96094L12.891 11.0394L17.9288 6.00019L12.891 0.960938Z"
-						fill="white" />
-				</svg>
-			</a>
-		</div>
+         </div>
+         <!-- ==== SLIDER ENDS ==== -->
 
-		<a class="hero__fab fab" href="#categories">
-			<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M5.25019 0V15.0472L2.03944 11.8358L0.960938 12.891L6.00019 17.9288L11.0394 12.8903L9.96094 11.835L6.75019 15.0472V0H5.25019Z"
-					fill="white" />
-			</svg>
-		</a>
-		<a class="hero__fab-two fab-two">
-			<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M5.25019 0V15.0472L2.03944 11.8358L0.960938 12.891L6.00019 17.9288L11.0394 12.8903L9.96094 11.835L6.75019 15.0472V0H5.25019Z"
-					fill="white" />
-			</svg>
-		</a>
+         <!-- Rating -->
+         <!-- <div class="rating" data-rating="">
+                     <div class="rating_body">
+                        <div class="rating_active"></div>
+                     </div>
+                  </div> -->
 
-	</section>
 
-	<!-- ==== CATEGORIES section ==== -->
-	<section id="categories" class="categories">
-		<div class="show-on-scroll">
-			<h2 id="title">Ми пропонуємо</h2>
-			<div class="categories__divider">
-				<img src="./template/img/logo-brown.svg" loading="lazy" alt="Logo">
-			</div>
-		</div>
-		<div class="container">
-			<a href="/sofas" class="category__sofa">
-				<div>
-					<img src="./template/img/sofa1.jpg" loading="lazy" alt="Sofa">
-					<div class="category__content">
-						<h2 class="category__title">
-							Дивани
-						</h2>
-					</div>
-				</div>
-			</a>
-			<a href="/corner_sofas" class="category__angle-sofa">
-				<div>
-					<img src="./template/img/angle-sofa1.jpg" loading="lazy" alt="Sofa">
-					<div class="category__content">
-						<h2 class="category__title">
-							Кутові дивани
-						</h2>
-					</div>
-				</div>
-			</a>
-			<a href="/beds" class="category__bed">
-				<div>
-					<img src="./template/img/bed1.jpg" loading="lazy" alt="Sofa">
-					<div class="category__content">
-						<h2 class="category__title">
-							Ліжка
-						</h2>
-					</div>
-				</div>
-			</a>
-			<a href="/armchairs_and_poufs" class="category__chair">
-				<div>
-					<img src="./template/img/chair1.jpg" loading="lazy" alt="Sofa">
-					<div class="category__content">
-						<h2 class="category__title">
-							Крісла та пуфи
-						</h2>
-					</div>
-				</div>
-			</a>
-		</div>
-	</section>
 
-	<!-- ==== TESTEMONIALS section ==== -->
-	<section class="testemonials">
-		<div class="show-on-scroll">
-			<h2>Відгуки наших клієнтів</h2>
-			<div class="testemonials__divider">
-				<img src="./template/img/logo-white.svg" alt="Logo">
-			</div>
-		</div>
-		<div class="testemonials__body">
-			<div class="testemonials__item">
-				<h3>Анна</h3>
-				<div class="testemonials__rate">
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-				</div>
-				<article>
-					<q>Мені дуже сподобалася якість ліжка, яке ми з чоловіком придбали у цьому магазині! Користуємось
-						вже
-						майже два місяці і дуже задоволені.</q>
-				</article>
-			</div>
-			<div class="testemonials__item">
-				<h3>Андрій</h3>
-				<div class="testemonials__rate">
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-				</div>
-				<article>
-					<q>Придбав дорожну сумку. Якість - дуже хороша! Приємно знати, що це – продукт власного виробництва,
-						ще й
-						у моєму рідному місті. Так тримати!</q>
-				</article>
-			</div>
-			<div class="testemonials__item">
-				<h3>Даша</h3>
-				<div class="testemonials__rate">
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z"
-							fill="#FFDE59" />
-					</svg>
-					<svg width="12" height="12" viewBox="0 0 22 22" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M11.0002 0.55957L13.8658 8.62597H21.5602L15.2818 13.3636L17.527 21.6772L11.0002 16.6924L4.47456 21.6772L6.71857 13.3636L0.438965 8.62597H8.13337L11.0002 0.55957Z" />
-					</svg>
-				</div>
-				<article>
-					<q>Загалом все сподобалося. Проте не відразу відправили товар до Вінниці. Сумкою задоволена.</q>
-				</article>
-			</div>
-		</div>
-		<!-- <a href="#" class="testemonials__btn">
-			Залишити відгук
-		</a> -->
-	</section>
 
-	<!-- ==== INSTAGRAM section ==== -->
-	<section class="instagram">
-		<div class="instagram__body">
-			<div class="instagram__title show-on-scroll">
-				<h2>Слідкуйте за нами в Instagram</h2>
-				<div class="instagram__divider">
-					<img src="./template/img/logo-brown.svg" alt="Logo">
-				</div>
-			</div>
-			<!-- Instagram embedded here: -->
-			<div class="tagembed-container" style=" width:100%;height:100%;overflow: auto;">
-				<div class="tagembed-socialwall" data-wall-id="68908" view-url="https://widget.tagembed.com/68908?view">
-				</div>
-				<script src="//widget.tagembed.com/embed.min.js" type="text/javascript"></script>
-			</div>
-			<!-- ======================== -->
-		</div>
-	</section>
+         
+               </div>
+            </div>
+            
+
+         <div class="back-fone">
+
+            <div class="product-positioning">
+
+               <!-- Price -->
+               <div class="product__price">Вартість:
+                  123грн.
+               </div>
+
+               <!-- To buy button -->
+               <div class="product__btn btn" onclick="addToCart('', this);" data-buy>
+                  
+                  Купити
+                  
+                  
+               </div>
+
+               <!-- Add to wish list -->
+               <!-- <div class="product__wish tooltip" title="У бажання"> -->
+               <a class="product__wish tooltip" onclick="addToWish('', this, event)">
+                  <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g id="SVGRepo_iconCarrier">
+                        <path id="background" 
+                            fill="#none" 
+                           d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z" />
+                        <path id="outline" stroke="#ffffff"
+                           d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                           stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                     </g>
+                  </svg>
+               </a>
+               <!-- </div> -->
+
+               <!-- Demarketion line -->
+
+               <!-- <div class="line"></div> -->
+
+               <div class="product__nav">
+                  <div class="product__nav-links">
+                     <a href="#product-main-slider">Фото</a>
+                     <a href="#descr">Опис</a>
+                     <a href="#characteristics">Технічні характеристики</a>
+                     <a href="#rev">Відгуки</a>
+                  </div>
+               </div>
+
+               <!-- Description -->
+               <div class="product__description" id="descr">
+                  <h3>ОПИС</h3>
+                  <article>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta mattis neque eu viverra. Vivamus nec bibendum elit. Suspendisse efficitur gravida velit, in aliquet leo tincidunt vel. Pellentesque vitae purus volutpat, varius nisl eget, bibendum dolor. Donec scelerisque eu velit sed euismod. Morbi sagittis et risus sit amet finibus. Ut ac rhoncus elit, sed mattis est. Aenean porta pulvinar tortor scelerisque pharetra. Pellentesque vel felis lacus. Integer quis ante erat.
+                  </article>
+               </div>
+
+               <!-- Demarketion line -->
+
+               <div class="line"></div>
+
+               <!-- Characterisrics -->
+               <div id="characteristics" class="product__char">
+                  <h3>ТЕХНІЧНІ ХАРАКТЕРИСТИКИ</h3>
+                  <article>
+                     Розмiри: Матеріали: Висота посадки: Внутрішні розміри сидіння: Особливості: Стиль: Виробник: власне виробництво.
+                  </article>
+               </div>
+
+               <!-- Demarketion line -->
+
+               <div class="line"></div>
+
+               <!-- Reviews -->
+               <div class="product__reviews" id="rev">
+                  <h3>ВІДГУКИ</h3>
+                  
+               </div>
+
+
+
+               <!-- Add review -->
+               <div class="product__feedback">
+                  <h3>ЗАЛИШИТИ ВІДГУК</h3>
+                  <form onsubmit="sendReview(event, '')">
+                     <div>
+                        <div class="product__feedback-name">
+                           <label for="name">
+                              <span>Ваше ім'я</span>
+                           </label>
+                           <div>
+                              <input type="text" id="name" name="name">
+                           </div>
+                           <span id="error_name"></span>
+                        </div>
+                        <div class="product__feedback-mail">
+                           <label for="email">
+                              <span>Електронна пошта</span>
+                           </label>
+                           <div>
+                              <input type="email" id="email" name="email">
+                           </div>
+                           <span id="error_email"></span>
+                        </div>
+                        <div class="product__feedback-description">
+                           <label for="content">
+                              <span>Ваш відгук</span>
+                           </label>
+                           <div>
+                              <textarea name="content" id="content" rows="6" cols="30"></textarea>
+                           </div>
+                           <span id="error_content"></span>
+                        </div>
+                        <div class="product__feedback-rating">
+                           <div>Поставити оцінку</div>
+                           <div class="review-rating">
+                              <div class="review-rating_items">
+                                 <input class="review-rating_item" id="rating_5" type="radio" name="rating" value="5">
+                                 <label class="review-rating_label" for="rating_5"></label>
+                                 <input class="review-rating_item" id="rating_4" type="radio" name="rating" value="4">
+                                 <label class="review-rating_label" for="rating_4"></label>
+                                 <input class="review-rating_item" id="rating_3" type="radio" name="rating" value="3">
+                                 <label class="review-rating_label" for="rating_3"></label>
+                                 <input class="review-rating_item" id="rating_2" type="radio" name="rating" value="2">
+                                 <label class="review-rating_label" for="rating_2"></label>
+                                 <input class="review-rating_item" id="rating_1" type="radio" name="rating" value="1">
+                                 <label class="review-rating_label" for="rating_1"></label>
+                              </div>
+                           </div>
+                           <span id="error_rating"></span>
+                        </div>
+                        <button type="submit" class="product__btn btn">Відправити</button>
+                        <span id="error_submit"></span>
+                     </div>
+                  </form>
+               </div>
+
+
+
+               <!-- Collection modals -->
+               
+
+            </div>
+         </div>
+      </div>
+   </section>
+
 </main>
 
 		<!-- ==== FOOTER starts here ===== -->
