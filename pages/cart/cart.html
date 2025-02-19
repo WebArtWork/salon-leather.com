@@ -1,66 +1,100 @@
 <main class="cart__page">
-   {% if !products.length %}
-   <div>
-      Ваш кошик порожній
-   </div>
-   <a class="cart__cat " href="/catalog">Каталог</a>
-   {% endif %}
-   {% if products.length %}
-   {% for product in products %}
-   {% if !product.colors.length %}
-   <div class="cart__product" data-id="{{{product.id}}}">
-      <a href="/p/{{{product.id}}}">
-         <img src="{{{product.thumb}}}" width="400">
-      </a>
-      <div class="cart__product-inf">
-         <h2>
-            <a href="/p/{{{product.id}}}">
-               {{{product.name}}}
-            </a>
-         </h2>
-         <div class="cart__price">
-            <span data-type="price" data-id="{{{product.id}}}"
-               data-price="{{{product.price}}}">{{{product.price * product.amount}}} UAH</span>
-            <button class="cart__btn-quantity" data-type="reduce" data-id="{{{product.id}}}">-</button>
-            <input type="text" value="{{{product.amount}}}" data-id="{{{product.id}}}">
-            <button class="cart__btn-quantity" data-type="increase" data-id="{{{product.id}}}">+</button>
-            <button class="cart__btn" data-type="delete" data-id="{{{product.id}}}">Видалити</button>
-         </div>
-      </div>
-   </div>
-   {% endif %}
-   {% if product.colors.length %}
-   {% for color in product.colors %}
-   <div data-id="{{{product.id + '_C_' + color.color.id}}}">
-      <a href="/p/{{{product.id}}}">
-         <img src="{{{product.thumb}}}" width="200">
-      </a>
+  {% if !products.length %}
+  <div>Ваш кошик порожній</div>
+  <a class="cart__cat" href="/catalog">Каталог</a>
+  {% endif %} {% if products.length %} {% for product in products %} {% if
+  !product.colors.length %}
+  <div class="cart__product" data-id="{{{product.id}}}">
+    <a href="/p/{{{product.id}}}">
+      <img src="{{{product.thumb}}}" width="400" />
+    </a>
+    <div class="cart__product-inf">
       <h2>
-         <a href="/p/{{{product.id}}}">
-            {{{product.name}}}
-         </a>
+        <a href="/p/{{{product.id}}}"> {{{product.name}}} </a>
       </h2>
-      <p>Колір: {{{color.color.name}}}</p>
-      <img src="{{{color.color.thumb}}}" width="100">
-      <div>
-         <span data-type="price" data-id="{{{product.id + '_C_' + color.color.id}}}"
-            data-price="{{{color.price}}}">{{{color.price * color.amount}}} UAH</span>
-         <button class="cart__btn" data-type="reduce" data-id="{{{product.id + '_C_' + color.color.id}}}">-</button>
-         <input type="text" value="{{{color.amount}}}" data-id="{{{product.id + '_C_' + color.color.id}}}">
-         <button class="cart__btn-quantity" data-type="increase"
-            data-id="{{{product.id + '_C_' + color.color.id}}}">+</button>
-         <button class="cart__btn" data-type="delete"
-            data-id="{{{product.id + '_C_' + color.color.id}}}">Видалити</button>
+      <div class="cart__price">
+        <span
+          data-type="price"
+          data-id="{{{product.id}}}"
+          data-price="{{{product.price}}}"
+          >{{{product.price * product.amount}}} UAH</span
+        >
+        <button
+          class="cart__btn-quantity"
+          data-type="reduce"
+          data-id="{{{product.id}}}"
+        >
+          -
+        </button>
+        <input
+          type="text"
+          value="{{{product.amount}}}"
+          data-id="{{{product.id}}}"
+        />
+        <button
+          class="cart__btn-quantity"
+          data-type="increase"
+          data-id="{{{product.id}}}"
+        >
+          +
+        </button>
+        <button class="cart__btn" data-type="delete" data-id="{{{product.id}}}">
+          Видалити
+        </button>
       </div>
-   </div>
-   {% endfor %}
-   {% endif %}
-   {% endfor %}
-   <span class="cart__total" data-type="total">Загалом {{{total}}} UAH</span>
-   <button class="cart__btn" onclick="history.back()">Продовжити покупки</button>
-   <button class="cart__btn">
-      <a href="/order">Оформити покупку</a>
-   </button>
-   {% endif %}
-   <script src="./template/pages/cart/cart.js" type="text/javascript"></script>
+    </div>
+  </div>
+  {% endif %} {% if product.colors.length %} {% for color in product.colors %}
+  <div data-id="{{{product.id + '_C_' + color.color.id}}}">
+    <a href="/p/{{{product.id}}}">
+      <img src="{{{product.thumb}}}" width="200" />
+    </a>
+    <h2>
+      <a href="/p/{{{product.id}}}"> {{{product.name}}} </a>
+    </h2>
+    <p>Колір: {{{color.color.name}}}</p>
+    <img src="{{{color.color.thumb}}}" width="100" />
+    <div>
+      <span
+        data-type="price"
+        data-id="{{{product.id + '_C_' + color.color.id}}}"
+        data-price="{{{color.price}}}"
+        >{{{color.price * color.amount}}} UAH</span
+      >
+      <button
+        class="cart__btn"
+        data-type="reduce"
+        data-id="{{{product.id + '_C_' + color.color.id}}}"
+      >
+        -
+      </button>
+      <input
+        type="text"
+        value="{{{color.amount}}}"
+        data-id="{{{product.id + '_C_' + color.color.id}}}"
+      />
+      <button
+        class="cart__btn-quantity"
+        data-type="increase"
+        data-id="{{{product.id + '_C_' + color.color.id}}}"
+      >
+        +
+      </button>
+      <button
+        class="cart__btn"
+        data-type="delete"
+        data-id="{{{product.id + '_C_' + color.color.id}}}"
+      >
+        Видалити
+      </button>
+    </div>
+  </div>
+  {% endfor %} {% endif %} {% endfor %}
+  <span class="cart__total" data-type="total">Загалом {{{total}}} UAH</span>
+  <button class="cart__btn" onclick="history.back()">Продовжити покупки</button>
+  <button class="cart__btn">
+    <a href="/order">Оформити покупку</a>
+  </button>
+  {% endif %}
+  <script src="./pages/cart/cart.js" type="text/javascript"></script>
 </main>

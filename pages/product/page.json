@@ -3,7 +3,7 @@
   "product": {
     "price": 123,
     "name": "Product Name",
-    "thumb": "./template/img/bed1.jpg",
+    "thumb": "./img/bed1.jpg",
     "thumbs": [],
     "site": "Меблі",
     "colors": "",

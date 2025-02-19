@@ -1,146 +1,164 @@
 <main class="order__page">
-    <form onsubmit="confirmOrder(event)">
-        <div class="order__user">
-            <div class="order__user-data">
-                <label for="second_name">Прізвище</label>
-                <input type="text" name="second_name" id="second_name">
-                <div class="order__error" id="second_name_error"></div>
-            </div>
-            <div class="order__user-data">
-                <label for="first_name">Ім'я</label>
-                <input type="text" name="first_name" id="first_name">
-                <div class="order__error" id="first_name_error"></div>
-            </div>
-            <div class="order__user-data">
-                <label for="patronymic">По-батькові</label>
-                <input type="text" name="patronymic" id="patronymic">
-                <div class="order__error" id="patronymic_error"></div>
-            </div>
-            <div class="order__user-data">
-                <label for="phone">Номер телефону</label>
-                <input type="tel" name="phone" id="phone">
-                <div class="order__error" id="phone_error"></div>
-            </div>
-            <div class="order__user-data">
-                <label for="email">Єлектронна пошта</label>
-                <input type="text" name="email" id="email">
-                <div class="order__error" id="email_error"></div>
-            </div>
+  <form onsubmit="confirmOrder(event)">
+    <div class="order__user">
+      <div class="order__user-data">
+        <label for="second_name">Прізвище</label>
+        <input type="text" name="second_name" id="second_name" />
+        <div class="order__error" id="second_name_error"></div>
+      </div>
+      <div class="order__user-data">
+        <label for="first_name">Ім'я</label>
+        <input type="text" name="first_name" id="first_name" />
+        <div class="order__error" id="first_name_error"></div>
+      </div>
+      <div class="order__user-data">
+        <label for="patronymic">По-батькові</label>
+        <input type="text" name="patronymic" id="patronymic" />
+        <div class="order__error" id="patronymic_error"></div>
+      </div>
+      <div class="order__user-data">
+        <label for="phone">Номер телефону</label>
+        <input type="tel" name="phone" id="phone" />
+        <div class="order__error" id="phone_error"></div>
+      </div>
+      <div class="order__user-data">
+        <label for="email">Єлектронна пошта</label>
+        <input type="text" name="email" id="email" />
+        <div class="order__error" id="email_error"></div>
+      </div>
+    </div>
+    <div class="order__addres">
+      <div class="order__addres-delivery">
+        <p>Оберіть доставку</p>
+        <div>
+          <input
+            type="radio"
+            name="delivery_type"
+            checked
+            id="within_city"
+            value="within_city"
+          />
+          <label for="within_city">По місту</label>
         </div>
-        <div class="order__addres">
-            <div class="order__addres-delivery">
-                <p>Оберіть доставку</p>
-                <div>
-                    <input type="radio" name="delivery_type" checked id="within_city" value="within_city">
-                    <label for="within_city">По місту</label>
-                </div>
-                <div>
-                    <input type="radio" name="delivery_type" id="warehouse_nova_poshta" value="warehouse_nova_poshta">
-                    <label for="warehouse_nova_poshta">Самовивіз Нова пошта</label>
-                </div>
-                <div>
-                    <input type="radio" name="delivery_type" id="courier_nova_poshta" value="courier_nova_poshta">
-                    <label for="courier_nova_poshta">Кур'єр Нова пошта</label>
-                </div>
-                <div class="order__error" id="delivery_type_error"></div>
-            </div>
-            <div class="order__addres-location">
-                <div id="settlement" style="display:none">
-                    <label for="settlement_name">Населений пункт</label>
-                    <input type="text" name="settlement_name" id="settlement_name">
-                    <input type="text" name="settlement_ref" id="settlement_ref" hidden>
-                    <div class="list" id="settlements_list"></div>
-                    <div class="error" id="settlement_error"></div>
-                </div>
-                <div id="address" style="display:block">
-                    <div>
-                        <label for="street_name">Вулиця</label>
-                        <input type="text" name="street_name" id="street_name">
-                        <input type="text" name="street_ref" id="street_ref" hidden>
-                        <div class="list" id="streets_list"></div>
-                        <div class="order__error" id="street_error"></div>
-                    </div>
-                    <div>
-                        <label for="house">Будинок</label>
-                        <input type="text" name="house" id="house">
-                        <div class="order__error" id="house_error"></div>
-                    </div>
-                    <div>
-                        <label for="apartment">Квартира</label>
-                        <input type="text" name="apartment" id="apartment">
-                    </div>
-                </div>
-                <div id="warehouse" style="display:none">
-                    <label for="warehouse_name">Відділення або поштомат</label>
-                    <input type="text" name="warehouse_name" id="warehouse_name">
-                    <input type="text" name="warehouse_ref" id="warehouse_ref" hidden>
-                    <div class="list" id="warehouses_list"></div>
-                    <div class="order__error" id="warehouse_error"></div>
-                </div>
-            </div>
+        <div>
+          <input
+            type="radio"
+            name="delivery_type"
+            id="warehouse_nova_poshta"
+            value="warehouse_nova_poshta"
+          />
+          <label for="warehouse_nova_poshta">Самовивіз Нова пошта</label>
         </div>
-        <div class="order__payment">
-            <p>Оберіть спосіб оплати</p>
-            <div>
-                <input type="radio" name="payment_method" id="card_on_site" value="card_on_site">
-                <label for="card_on_site">Карткою на сайті</label>
-            </div>
-            <div>
-                <input type="radio" name="payment_method" id="upon_receipt" value="upon_receipt">
-                <label for="upon_receipt">При отриманні</label>
-            </div>
-            <div class="order__error" id="payment_method_error"></div>
+        <div>
+          <input
+            type="radio"
+            name="delivery_type"
+            id="courier_nova_poshta"
+            value="courier_nova_poshta"
+          />
+          <label for="courier_nova_poshta">Кур'єр Нова пошта</label>
         </div>
-        <div class="order__info">
-            <label for="note">Примітка</label>
-            <textarea name="note" id="note" cols="30" rows="10"></textarea>
+        <div class="order__error" id="delivery_type_error"></div>
+      </div>
+      <div class="order__addres-location">
+        <div id="settlement" style="display: none">
+          <label for="settlement_name">Населений пункт</label>
+          <input type="text" name="settlement_name" id="settlement_name" />
+          <input type="text" name="settlement_ref" id="settlement_ref" hidden />
+          <div class="list" id="settlements_list"></div>
+          <div class="error" id="settlement_error"></div>
         </div>
-        <div class="order__products">
-            <span>Товари</span>
-            {% for product in products %}
-            {% if !product.colors.length %}
-            <div class="order__products-cart">
-                <a class="order__products-img" href="/p/{{{product.id}}}">
-                    <img src="{{{product.thumb}}}" width="200">
-                </a>
-                <div class="order__products-inf">
-                    <span>
-                        <a href="/p/{{{product.id}}}">
-                            {{{product.name}}}
-                        </a>
-                    </span>
-                    <span>{{{product.price}}} UAH</span>
-                    <span> x {{{product.amount}}} шт.</span>
-                    <span>{{{product.price * product.amount}}} UAH</span>
-                </div>
-            </div>
-            {% endif %}
-            {% if product.colors.length %}
-            {% for color in product.colors %}
-            <div>
-                <a href="/p/{{{product.id}}}">
-                    <img src="{{{product.thumb}}}" width="200">
-                </a>
-                <span>
-                    <a href="/p/{{{product.id}}}">
-                        {{{product.name}}}
-                    </a>
-                </span>
-                <p>Колір: {{{color.color.name}}}</p>
-                <img src="{{{color.color.thumb}}}" width="100">
-                <span>{{{color.price}}} UAH</span>
-                <span> x {{{color.amount}}} шт.</span>
-                <span>{{{color.price * color.amount}}} UAH</span>
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endfor %}
+        <div id="address" style="display: block">
+          <div>
+            <label for="street_name">Вулиця</label>
+            <input type="text" name="street_name" id="street_name" />
+            <input type="text" name="street_ref" id="street_ref" hidden />
+            <div class="list" id="streets_list"></div>
+            <div class="order__error" id="street_error"></div>
+          </div>
+          <div>
+            <label for="house">Будинок</label>
+            <input type="text" name="house" id="house" />
+            <div class="order__error" id="house_error"></div>
+          </div>
+          <div>
+            <label for="apartment">Квартира</label>
+            <input type="text" name="apartment" id="apartment" />
+          </div>
         </div>
-        <div class="order__topay">
-            <span>До оплати</span>
-            <span>{{{total}}} UAH</span>
-            <button class="order__btn" type="submit">Купити</button>
+        <div id="warehouse" style="display: none">
+          <label for="warehouse_name">Відділення або поштомат</label>
+          <input type="text" name="warehouse_name" id="warehouse_name" />
+          <input type="text" name="warehouse_ref" id="warehouse_ref" hidden />
+          <div class="list" id="warehouses_list"></div>
+          <div class="order__error" id="warehouse_error"></div>
         </div>
-    </form>
-    <script src="./template/pages/order/order.js" type="text/javascript"></script>
+      </div>
+    </div>
+    <div class="order__payment">
+      <p>Оберіть спосіб оплати</p>
+      <div>
+        <input
+          type="radio"
+          name="payment_method"
+          id="card_on_site"
+          value="card_on_site"
+        />
+        <label for="card_on_site">Карткою на сайті</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          name="payment_method"
+          id="upon_receipt"
+          value="upon_receipt"
+        />
+        <label for="upon_receipt">При отриманні</label>
+      </div>
+      <div class="order__error" id="payment_method_error"></div>
+    </div>
+    <div class="order__info">
+      <label for="note">Примітка</label>
+      <textarea name="note" id="note" cols="30" rows="10"></textarea>
+    </div>
+    <div class="order__products">
+      <span>Товари</span>
+      {% for product in products %} {% if !product.colors.length %}
+      <div class="order__products-cart">
+        <a class="order__products-img" href="/p/{{{product.id}}}">
+          <img src="{{{product.thumb}}}" width="200" />
+        </a>
+        <div class="order__products-inf">
+          <span>
+            <a href="/p/{{{product.id}}}"> {{{product.name}}} </a>
+          </span>
+          <span>{{{product.price}}} UAH</span>
+          <span> x {{{product.amount}}} шт.</span>
+          <span>{{{product.price * product.amount}}} UAH</span>
+        </div>
+      </div>
+      {% endif %} {% if product.colors.length %} {% for color in product.colors
+      %}
+      <div>
+        <a href="/p/{{{product.id}}}">
+          <img src="{{{product.thumb}}}" width="200" />
+        </a>
+        <span>
+          <a href="/p/{{{product.id}}}"> {{{product.name}}} </a>
+        </span>
+        <p>Колір: {{{color.color.name}}}</p>
+        <img src="{{{color.color.thumb}}}" width="100" />
+        <span>{{{color.price}}} UAH</span>
+        <span> x {{{color.amount}}} шт.</span>
+        <span>{{{color.price * color.amount}}} UAH</span>
+      </div>
+      {% endfor %} {% endif %} {% endfor %}
+    </div>
+    <div class="order__topay">
+      <span>До оплати</span>
+      <span>{{{total}}} UAH</span>
+      <button class="order__btn" type="submit">Купити</button>
+    </div>
+  </form>
+  <script src="./pages/order/order.js" type="text/javascript"></script>
 </main>
