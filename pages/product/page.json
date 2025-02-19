@@ -1,0 +1,13 @@
+{
+  "name": "product",
+  "product": {
+    "price": 123,
+    "name": "Product Name",
+    "thumb": "./template/img/bed1.jpg",
+    "thumbs": [],
+    "site": "Меблі",
+    "colors": "",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta mattis neque eu viverra. Vivamus nec bibendum elit. Suspendisse efficitur gravida velit, in aliquet leo tincidunt vel. Pellentesque vitae purus volutpat, varius nisl eget, bibendum dolor. Donec scelerisque eu velit sed euismod. Morbi sagittis et risus sit amet finibus. Ut ac rhoncus elit, sed mattis est. Aenean porta pulvinar tortor scelerisque pharetra. Pellentesque vel felis lacus. Integer quis ante erat.",
+    "characteristics": "Розмiри: Матеріали: Висота посадки: Внутрішні розміри сидіння: Особливості: Стиль: Виробник: власне виробництво."
+  }
+}

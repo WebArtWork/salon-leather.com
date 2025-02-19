@@ -1,0 +1,42 @@
+/* width to height index */
+$index: calc(1vw + 1vh);
+
+/* font family */
+$ff-base: "Raleway", sans-serif;
+$ff-title: "EB Garamond", serif;
+$ff-second: "Poppins", sans-serif;
+
+/* font-size */
+$fs: 16px;
+
+// ===== COLORS =====
+$bg: #fff;
+
+// SCSS Adaptive Values:
+$maxWidth-pc: 1280;
+$maxWidth-mob: 719;
+
+// adaptive height for the swiper
+@mixin adaptive-height-mob($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth-mob: $maxWidth-mob - 320;
+  height: calc(
+    #{$mobSize + vh} + #{$addSize} * ((100vw - 320px) / #{$maxWidth-mob})
+  ) !important;
+}
+
+// @mixin adaptive-height-pc($pcSize, $mobSize) {
+//   $addSize: $pcSize - $mobSize;
+//   $maxWidth-pc: $maxWidth-pc - 720;
+//   height: calc(
+//     #{$mobSize + px} + #{$addSize} * ((100vw - 720px) / #{$maxWidth-pc})
+//   ) !important;
+// }
+
+@mixin adaptive-height-pc($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth-pc: $maxWidth-pc - 720;
+  height: calc(
+    #{$mobSize + vh} + #{$addSize} * ((100vw - 720px) / #{$maxWidth-pc})
+  ) !important;
+}

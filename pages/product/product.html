@@ -1,0 +1,292 @@
+<main class="product-page">
+   <section class="product">
+      <div class="background"></div>
+      <div class="container">
+
+         <!-- Product title -->
+         <div class="product__title">
+            {{{product.name}}}
+            <!-- Rating -->
+            <div class="rating" data-rating="{{{rating}}}">
+               <div class="rating_body">
+                  <div class="rating_active"></div>
+               </div>
+            </div>
+         </div>
+
+         <!-- <div class="product__body">
+                      <div class="img-main">
+                         <img src="{{{product.thumb}}}" alt="Sofa">
+                      </div>
+               </div> -->
+
+         <!-- ==== SLIDER ==== -->
+         <!-- Slider main container -->
+         <div class="swiper" id="product-main-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+               <!-- Slides -->
+               {% for thumb in product.thumbs %}
+               <div class="swiper-slide">
+                  <div class="swiper-img-box">
+                     <img src="{{{thumb}}}" />
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+         </div>
+         <!-- ==== SLIDER ENDS ==== -->
+
+         <!-- Rating -->
+         <!-- <div class="rating" data-rating="{{{rating}}}">
+                     <div class="rating_body">
+                        <div class="rating_active"></div>
+                     </div>
+                  </div> -->
+
+
+
+
+         {% if product.materials.length %}
+         <!-- Materials & Colors -->
+         <div class="product__color">
+            <h3>Матеріал і Колір</h3>
+            <div>
+               <div class="materials">
+                  <ul>
+                     {% for material in product.materials %}
+                     <li {% if loop.first %} class="active" {% endif %} data-material="{{{material.id.id}}}"
+                        onclick="changeMaterial(this)">
+                        {{{material.id.name}}}
+                     </li>
+                     {% endfor %}
+                  </ul>
+               </div>
+               <div>
+                  {% for material in product.materials %}
+                  <div {% if loop.first %} class="material_collections active" {% endif %} class="material_collections"
+                     data-material-collections="{{{material.id.id}}}">
+                     {% for collection in material.collections %}
+                     {% if collection.colors.length %}
+                     <div class="collection">
+                        <div data-collection="{{{collection.id.id}}}" {% if collection.id.link %}
+                           data-link="{{{collection.id.link}}}" {% endif %} onclick="openCollection(this)">
+                           {{{collection.id.name}}} ({{{collection.price}}} грн.)
+                        </div>
+                        <div class="collection__colors">
+                           {% for color in collection.colors %}
+                           <div class="color" data-color="{{{color.id.id}}}"
+                              onclick="choiceColor(this, '{{{collection.price}}}', '{% if color.thumbs.length %}{{{color.thumbs}}}{% endif %}{% if !color.thumbs.length %}{{{product.thumbs}}}{% endif %}', '{{{product.id}}}')">
+                              <div class="color__preview">
+                                 <img src="{{{color.id.thumb}}}" alt="" width="40" height="40">
+                              </div>
+                              <div class="color__container">
+                                 <div class="color__triangle"></div>
+                                 <div class="color__card">
+                                    <img src="{{{color.id.thumb}}}" alt="" width="150" height="150">
+                                    <div style="color:black">{{{color.id.name}}}</div>
+                                 </div>
+                              </div>
+                           </div>
+                           {% endfor %}
+                        </div>
+                     </div>
+                     {% endif %}
+                     {% endfor %}
+                  </div>
+                  {% endfor %}
+                  {% endif %}
+               </div>
+            </div>
+            {% if product.materials.length %}
+            <input type="text" readonly hidden disabled id="color_id">
+         </div>
+         {% endif %}
+
+         <div class="back-fone">
+
+            <div class="product-positioning">
+
+               <!-- Price -->
+               <div class="product__price">Вартість:{% if product.materials.length %} від {% endif %}
+                  {{{product.price}}}грн.
+               </div>
+
+               <!-- To buy button -->
+               <div class="product__btn btn" onclick="addToCart('{{{product.id}}}', this);" data-buy>
+                  {% if !inCart(product.id) %}
+                  Купити
+                  {% endif %}
+                  {% if inCart(product.id) %}
+                  В кошику
+                  {% endif %}
+               </div>
+
+               <!-- Add to wish list -->
+               <!-- <div class="product__wish tooltip" title="У бажання"> -->
+               <a class="product__wish tooltip" onclick="addToWish('{{{product.id}}}', this, event)">
+                  <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g id="SVGRepo_iconCarrier">
+                        <path id="background" {% if inWish(product.id) %} fill="#ffffff" {% endif %}
+                           {% if !inWish(product.id) %} fill="#none" {% endif %}
+                           d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z" />
+                        <path id="outline" stroke="#ffffff"
+                           d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+                           stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                     </g>
+                  </svg>
+               </a>
+               <!-- </div> -->
+
+               <!-- Demarketion line -->
+
+               <!-- <div class="line"></div> -->
+
+               <div class="product__nav">
+                  <div class="product__nav-links">
+                     <a href="#product-main-slider">Фото</a>
+                     <a href="#descr">Опис</a>
+                     <a href="#characteristics">Технічні характеристики</a>
+                     <a href="#rev">Відгуки</a>
+                  </div>
+               </div>
+
+               <!-- Description -->
+               <div class="product__description" id="descr">
+                  <h3>ОПИС</h3>
+                  <article>
+                     {{{product.description}}}
+                  </article>
+               </div>
+
+               <!-- Demarketion line -->
+
+               <div class="line"></div>
+
+               <!-- Characterisrics -->
+               <div id="characteristics" class="product__char">
+                  <h3>ТЕХНІЧНІ ХАРАКТЕРИСТИКИ</h3>
+                  <article>
+                     {{{product.characteristics}}}
+                  </article>
+               </div>
+
+               <!-- Demarketion line -->
+
+               <div class="line"></div>
+
+               <!-- Reviews -->
+               <div class="product__reviews" id="rev">
+                  <h3>ВІДГУКИ</h3>
+                  {% for review in reviews %}
+                  <div class="product__reviews-card">
+                     <div>
+                        <span class="product__reviews-name">
+                           {{{review.name}}}
+                        </span>
+                        <span class="product__reviews-date">
+                           {{{date(review.date)}}}
+                        </span>
+                     </div>
+                     <div class="rating" data-rating="{{{review.rating}}}">
+                        <div class="rating_body">
+                           <div class="rating_active"></div>
+                        </div>
+                     </div>
+                     <div>
+                        <p class="product__reviews-text">
+                           {{{review.content}}}
+                        </p>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+
+
+
+               <!-- Add review -->
+               <div class="product__feedback">
+                  <h3>ЗАЛИШИТИ ВІДГУК</h3>
+                  <form onsubmit="sendReview(event, '{{{product.id}}}')">
+                     <div>
+                        <div class="product__feedback-name">
+                           <label for="name">
+                              <span>Ваше ім'я</span>
+                           </label>
+                           <div>
+                              <input type="text" id="name" name="name">
+                           </div>
+                           <span id="error_name"></span>
+                        </div>
+                        <div class="product__feedback-mail">
+                           <label for="email">
+                              <span>Електронна пошта</span>
+                           </label>
+                           <div>
+                              <input type="email" id="email" name="email">
+                           </div>
+                           <span id="error_email"></span>
+                        </div>
+                        <div class="product__feedback-description">
+                           <label for="content">
+                              <span>Ваш відгук</span>
+                           </label>
+                           <div>
+                              <textarea name="content" id="content" rows="6" cols="30"></textarea>
+                           </div>
+                           <span id="error_content"></span>
+                        </div>
+                        <div class="product__feedback-rating">
+                           <div>Поставити оцінку</div>
+                           <div class="review-rating">
+                              <div class="review-rating_items">
+                                 <input class="review-rating_item" id="rating_5" type="radio" name="rating" value="5">
+                                 <label class="review-rating_label" for="rating_5"></label>
+                                 <input class="review-rating_item" id="rating_4" type="radio" name="rating" value="4">
+                                 <label class="review-rating_label" for="rating_4"></label>
+                                 <input class="review-rating_item" id="rating_3" type="radio" name="rating" value="3">
+                                 <label class="review-rating_label" for="rating_3"></label>
+                                 <input class="review-rating_item" id="rating_2" type="radio" name="rating" value="2">
+                                 <label class="review-rating_label" for="rating_2"></label>
+                                 <input class="review-rating_item" id="rating_1" type="radio" name="rating" value="1">
+                                 <label class="review-rating_label" for="rating_1"></label>
+                              </div>
+                           </div>
+                           <span id="error_rating"></span>
+                        </div>
+                        <button type="submit" class="product__btn btn">Відправити</button>
+                        <span id="error_submit"></span>
+                     </div>
+                  </form>
+               </div>
+
+
+
+               <!-- Collection modals -->
+               {% for material in product.materials %}
+               {% for collection in material.collections %}
+               <div class="modal" data-collection="{{{collection.id.id}}}" onclick="closeModal(this)">
+                  <div class="modal-content" onclick="event.stopPropagation()">
+                     <span class="close" onclick="closeModal(this)">&times;</span>
+                     <div>
+                        <img src="{{{collection.id.thumb}}}" alt="">
+                        <p>{{{collection.id.description}}}</p>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+               {% endfor %}
+
+            </div>
+         </div>
+      </div>
+   </section>
+
+</main>

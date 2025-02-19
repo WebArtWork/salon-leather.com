@@ -1,0 +1,21 @@
+.car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px auto;
+  font-size: 28px;
+  color: #740606;
+  text-align: center;
+  h2 {
+    margin: 0 0 20px 0;
+  }
+  p {
+    margin: 20px auto;
+  }
+  span {
+    margin: 20px auto;
+  }
+  span:hover {
+    text-shadow: 2px 2px 8px #740606;
+  }
+}

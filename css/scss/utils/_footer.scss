@@ -1,0 +1,299 @@
+.footer {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #740606 0%,
+    #740606 41.57%,
+    #000000 100%
+  );
+  padding: 60px 0px;
+  &__container {
+    @extend .container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 10px;
+    color: $bg;
+    text-align: center;
+  }
+
+  &__categories {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+    order: 1;
+    flex: 1 1 auto;
+    &--furniture,
+    &--leather {
+      margin-bottom: 20px;
+    }
+    li::first-letter {
+      text-transform: uppercase;
+    }
+    line-height: 1.1;
+  }
+  .furniture__title,
+  .leather__title,
+  .salon__title {
+    text-transform: uppercase;
+    margin: 10px 0;
+    cursor: pointer;
+    position: relative;
+    &:hover,
+    &:active {
+      top: 1px;
+    }
+    a {
+      position: relative;
+      cursor: pointer;
+      &:hover,
+      &:active {
+        top: 1px;
+      }
+    }
+  }
+  .furniture__title,
+  .leather__title {
+    position: relative;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+
+      background-color: $bg;
+      width: 1px;
+      height: 8px;
+    }
+    &::after {
+      transform: rotate(45deg);
+      left: 150px;
+    }
+    &::before {
+      transform: rotate(-45deg);
+      left: 145px;
+    }
+  }
+
+  .furniture__list,
+  .leather__list {
+    display: none;
+    transition: display 0.6s ease;
+  }
+  ._active {
+    display: block;
+  }
+  ._icon {
+    &::after {
+      transform: rotate(135deg);
+      left: 150px;
+      top: 0px;
+    }
+    &::before {
+      transform: rotate(-135deg);
+      left: 150px;
+      top: 5px;
+    }
+  }
+
+  &__products {
+    grid-column: 4 / span 2;
+    grid-row: 1 / span 2;
+    order: 2;
+    &--title {
+      text-transform: uppercase;
+      margin: 10px 0;
+      cursor: pointer;
+      position: relative;
+      &:hover,
+      &:active {
+        top: 1px;
+      }
+    }
+    &--list {
+      cursor: pointer;
+      position: relative;
+      li {
+        &:hover,
+        &:active {
+          top: 1px;
+        }
+      }
+    }
+  }
+
+  &__disclaimer {
+    grid-column: 1 / span 12;
+    grid-row: 3;
+    font-size: 12px;
+    order: 6;
+    justify-self: center;
+    &--div {
+      position: relative;
+      margin-right: 10px;
+      &::after {
+        content: "";
+        background: $bg;
+        position: absolute;
+        left: 69px;
+        top: -2px;
+        width: 1px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__action {
+    grid-column: 8 / span 5;
+    grid-row: 1 / span 1;
+    order: 3;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    &--cart,
+    &--viber,
+    &--btn {
+      position: relative;
+      &:hover,
+      &:active {
+        top: 1px;
+      }
+    }
+
+    &--btn {
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0px 0px 3px #fff;
+      padding: 8px 10px;
+      #phone {
+        display: none;
+      }
+      a {
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        display: inline-block;
+        position: relative;
+        &:hover,
+        &:active {
+          top: 1px;
+        }
+      }
+    }
+  }
+
+  &__adress {
+    grid-column: 8 / span 5;
+    grid-row: 2 / span 1;
+    order: 4;
+    white-space: normal;
+    margin-bottom: 30px;
+    text-align: center;
+    justify-self: flex-end;
+  }
+  .logo {
+    grid-column: 6 / span 2;
+    grid-row: 1 / span 3;
+    order: 5;
+    justify-self: center;
+    &__title {
+      font-size: 18px;
+      span {
+        font-family: $ff-title;
+        font-size: 28px;
+        font-weight: 500;
+      }
+    }
+    img {
+      width: 100%;
+      height: 50px;
+      padding: 4px;
+      position: relative;
+      &:hover,
+      &:active {
+        top: 1px;
+      }
+    }
+    a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+  @media screen and (min-width: 720px) {
+    &__container {
+      @extend .container;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 10% 80% 10%;
+      gap: 10px;
+      font-size: calc(12px + (14 - 12) * ((100vw - 600px) / (1920 - 600)));
+    }
+    #phone {
+      display: inline-block;
+    }
+    .furniture__title {
+      margin-top: 0;
+    }
+    .furniture__title,
+    .leather__title {
+      position: relative;
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+    .furniture__list,
+    .leather__list {
+      display: inline-block;
+    }
+    &__categories {
+      li,
+      a {
+        font-size: 18px;
+      }
+    }
+    &__categories,
+    &__products {
+      justify-self: flex-start;
+      align-self: flex-start;
+    }
+    &__products {
+      li,
+      a {
+        font-size: 18px;
+      }
+      &--title {
+        margin-top: 0;
+      }
+    }
+    &__action {
+      justify-self: flex-end;
+      &--btn {
+        img {
+          display: none;
+        }
+      }
+    }
+
+    &__adress {
+      text-align: right;
+      line-height: 1.1;
+      // li,
+      // a {
+      //   font-size: 18px;
+      // }
+      article {
+        font-size: 16px;
+      }
+      a:hover {
+        //   color: #000000;
+        //   text-shadow: 10px #fff;
+        //   transform: scale(1.5);
+        text-shadow: 2px 0px 25px rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}

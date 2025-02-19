@@ -1,0 +1,104 @@
+.cart {
+  &__page {
+    background-color: #492020;
+    color: $bg;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0.2rem;
+    line-height: 1.2;
+    // margin: 60px 15px 20px 15px;
+    min-height: 50vh;
+    padding: 60px 15px 20px 15px;
+  }
+  &__product {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    img {
+      border-radius: 10px;
+      // width: 100%;
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      padding: 10px;
+      align-self: center;
+    }
+  }
+  &__btn,
+  &__cat {
+    background-color: #492020;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    letter-spacing: 0.3rem;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    border: 1px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    &:hover,
+    &:active {
+      background-color: #764f6c;
+      top: 1px;
+    }
+  }
+  &__btn-quantity {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  // &__btn-text {
+  //   font-size: 24px;
+  //   line-height: 30px;
+  //   display: block;
+  //   text-align: center;
+  // }
+  &__cat {
+    margin: 40px 0 0 0;
+  }
+  &__price {
+    margin: 10px;
+    align-self: center;
+    text-align: center;
+    input {
+      // background-color: darkgrey;
+      background-color: transparent;
+      color: #fff;
+      font-size: 30px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+  &__price,
+  &__total {
+    // margin: 10px 0 10px 0;
+    margin: 10px;
+    &input {
+      text-align: center;
+      font-size: 16px;
+      width: 40px;
+      height: 35px;
+    }
+  }
+  @media screen and (min-width: 720px) {
+    &__product {
+      flex-wrap: nowrap;
+      h2 {
+        align-self: center;
+      }
+    }
+    &__product-inf {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 0 0 10px;
+    }
+  }
+}

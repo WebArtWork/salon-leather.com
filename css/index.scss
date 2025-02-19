@@ -1,0 +1,17 @@
+// Global styles
+@import "scss/utils/normalize";
+@import "scss/utils/fonts";
+@import "scss/utils/vars";
+@import "scss/utils/media";
+@import "scss/base";
+
+// pages
+@import "scss/pages/template";
+@import "scss/pages/product";
+@import "scss/pages/category";
+@import "scss/pages/leather";
+@import "scss/utils/header";
+@import "scss/utils/footer";
+@import "scss/pages/cart";
+@import "scss/pages/order";
+@import "scss/pages/car";

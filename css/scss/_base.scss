@@ -1,0 +1,112 @@
+.js-loading *,
+.js-loading *::before,
+.js-loading *::after {
+  animation-play-state: paused !important;
+}
+
+body {
+  font-family: $ff-base;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg;
+  overflow: auto;
+}
+
+html {
+  height: 100%;
+}
+
+// -----scroll-bar-start------
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #492020;
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #764f6c;
+  border-radius: 20px;
+  border: 1px solid rgb(124, 122, 118);
+}
+// -----scroll-bar-end------
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &._lock {
+    overflow: hidden;
+  }
+}
+.container {
+  width: 100%;
+  padding: 0px 15px;
+  margin: 0px auto;
+  @media screen and (min-width: 600px) {
+    width: 95%;
+    max-width: 1790px;
+    padding: 0px;
+  }
+}
+
+.fab {
+  border: none;
+  border-radius: 50%;
+  padding: 8px 12px;
+  background-color: #ac4a4a;
+  position: fixed;
+  z-index: 80;
+  right: 15px;
+  bottom: 30px;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 37%);
+  cursor: pointer;
+  animation: fab 1s 0s ease-out, pulse 3.5s 2s ease-out infinite;
+  svg {
+    width: 18px;
+    height: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    right: 2.5%;
+  }
+  @media screen and (min-width: 1805px) {
+    right: calc((100vw - 1790px) / 2);
+  }
+}
+._scrolled {
+  display: none;
+}
+.fab-two {
+  @extend .fab;
+  display: none;
+  animation: none;
+  svg {
+    transform: rotate(180deg);
+  }
+}
+._scroll-up {
+  display: inline-block;
+}
+@keyframes fab {
+  0% {
+    opacity: 0;
+    transform: translateY(-2em);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: none;
+  }
+}
