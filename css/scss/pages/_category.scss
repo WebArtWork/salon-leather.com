@@ -1,3 +1,4 @@
+@use "../utils/vars" as *;
 // ==== HERO section ====
 .categories-hero {
   width: 100%;
@@ -122,7 +123,14 @@
     }
   }
   &__container {
-    @extend .container;
+    width: 100%;
+    padding: 0px 15px;
+    margin: 0px auto;
+    @media screen and (min-width: 600px) {
+      width: 95%;
+      max-width: 1790px;
+      padding: 0px;
+    }
     color: $bg;
     background-color: $bg;
     display: grid;
